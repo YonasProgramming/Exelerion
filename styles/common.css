@@ -1,0 +1,52 @@
+
+@font-face {
+    font-family: "Interstate";
+    src: url('../media/fonts/InterstateLightCondensed.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Interstate", sans-serif;
+    overflow: hidden;
+}
+
+:root {
+    --header-height: 65px;
+    --bg-color: black;
+    --text-color: #fff;
+    --highlight-color: #c4c5c7; /*sekundarna boja*/
+    --button-color: #3f4251;
+    --accent-yellow: #ffe851; /*primarna boja*/
+    --accent-bg: #2c2e35;
+}
+
+highlight {
+    color: var(--accent-yellow);
+}
+
+@keyframes floatin {
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

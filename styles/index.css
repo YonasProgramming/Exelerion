@@ -1,0 +1,69 @@
+.contentWrapper {
+    height: 100vh;
+}
+
+/*Mainlogo related*/
+.mainLogoContainer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainLogo {
+    user-select: none;
+    width: 100%;
+    transition: all 1.2s ease-out;
+    animation: floatin 1.2s;
+    transform: translateY(-50px);
+}
+
+.mainLogo h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+}
+
+.mainLogo h1 highlight {
+    font-size: 120px;
+    color: var(--accent-yellow);
+}
+
+.mainLogo span {
+    font-size: 40px;
+    color: var(--accent-yellow);
+    display: block;
+    width: 100%;
+    padding-left: 25%;
+}
+
+/*Slideshow related*/
+.slideShow {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    z-index: -3;
+}
+
+.slideShow img {
+    height: inherit;
+    width: inherit;
+    filter: blur(5px);
+}
+
+/*queries*/
+@media only screen and (max-width:550px){
+    .mainLogo h1 {
+        font-size: 70px;
+    }
+
+    .mainLogo h1 highlight {
+        font-size: 70px;
+    }
+
+    .mainLogo span {
+        padding-left: 0px;
+    }
+}
