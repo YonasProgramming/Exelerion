@@ -1,6 +1,8 @@
 .contactWrapper {
     padding: 15px;
     /* text-align: center; */
+    overflow-y: scroll;
+    height: 95vh;
 }
 
 .contactWrapper .heading {
