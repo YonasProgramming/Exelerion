@@ -60,9 +60,6 @@ function enableModalForImgs(project){
         img.onclick = function(){
             displayModal(img,project);
         }
-        img.touchstart = function(){
-            displayModal(img,project);
-        }
     });
 }
 
