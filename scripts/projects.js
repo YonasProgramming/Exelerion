@@ -58,10 +58,10 @@ function enableModalForImgs(project){
 
     imgs.forEach((img)=>{
         img.onclick = function(){
-            displayModal(img);
+            displayModal(img,project);
         }
         img.touchstart = function(){
-            displayModal(img);
+            displayModal(img,project);
         }
     });
 }
