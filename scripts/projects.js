@@ -58,23 +58,31 @@ function enableModalForImgs(project){
 
     imgs.forEach((img)=>{
         img.onclick = function(){
-            let src = img.src;
-            let modalImg = modal.querySelector("div.img img");
-            modalImg.src = src;
-            modal.style.display = "block";
-
-            let modalClose = modal.querySelector("i");
-
-            let modalTitle = modal.querySelector("div.header h2");
-            let projectTitle = project.querySelector("div.wrapper div.description div.text h3").innerHTML;
-            modalTitle.innerHTML = projectTitle;
-
-            modalClose.onclick = function(){
-                modal.style.display = "none";
-            }
+            displayModal(img);
+        }
+        img.touchstart = function(){
+            displayModal(img);
         }
     });
+}
 
+function displayModal(img){
+    let src = img.src;
+
+    let modalImg = modal.querySelector("div.img img");
+    modalImg.src = src;
+
+    modal.style.display = "block"
+
+    let modalClose = modal.querySelector("i");
+
+    let modalTitle = modal.querySelector("div.header h2");
+    let projectTitle = project.querySelector("div.wrapper div.description div.text h3").innerHTML;
+    modalTitle.innerHTML = projectTitle;
+
+    modalClose.onclick = function(){
+        modal.style.display = "none";
+    }
 }
 
 window.addEventListener("resize",resetProjectSizing);

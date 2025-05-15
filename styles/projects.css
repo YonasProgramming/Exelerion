@@ -84,6 +84,11 @@
     transition: 1s ease-in-out;
 }
 
+.projectWrapper .project .projectDetails .images img:hover {
+    cursor: pointer;
+    outline: 1px solid var(--accent-yellow);
+}
+
 .projectWrapper .project .projectDetails .description {
     padding: 5px;
     width: 100%;
