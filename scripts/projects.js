@@ -1,4 +1,5 @@
 const projects = document.querySelectorAll("div.project");
+const modal = document.querySelector("div.modal");
 projects.forEach((project)=>{
     let btn = project.querySelector("div.moreDetails");
     let data = project.querySelector("div.projectDetails");
@@ -7,7 +8,7 @@ projects.forEach((project)=>{
         closeOtherDetails(data);
         resetProjectSizing(projects);
         resetBtns(projects,project);
-        assignImgHover(project);
+        enableModalForImgs(project);
         data.style.display = data.style.display == "none" ? "block" : "none";
         btn.innerHTML = btn.innerHTML == "Close Details" ? `More Details<i class="bi bi-plus-lg"></i>` : "Close Details";
 
@@ -52,23 +53,28 @@ function resetBtns(projects, targetToIgnore){
     });
 }
 
-function assignImgHover(project){
+function enableModalForImgs(project){
     let imgs = project.querySelectorAll("div.images img");
 
-    if (imgs.length == 3){
-        imgs[0].classList.add("hoverLeft");
-        imgs[1].classList.add("hoverCenter");
-        imgs[2].classList.add("hoverRight");
-    }
+    imgs.forEach((img)=>{
+        img.onclick = function(){
+            let src = img.src;
+            let modalImg = modal.querySelector("div.img img");
+            modalImg.src = src;
+            modal.style.display = "block";
 
-    if (imgs.length == 2){
-        imgs[0].classList.add("hoverCenter");
-        imgs[1].classList.add("hoverCenter");
-    }
+            let modalClose = modal.querySelector("i");
 
-    if (imgs.length == 1){
-        imgs[0].classList.add("hoverCenter");
-    }
+            let modalTitle = modal.querySelector("div.header h2");
+            let projectTitle = project.querySelector("div.wrapper div.description div.text h3").innerHTML;
+            modalTitle.innerHTML = projectTitle;
+
+            modalClose.onclick = function(){
+                modal.style.display = "none";
+            }
+        }
+    });
+
 }
 
 window.addEventListener("resize",resetProjectSizing);

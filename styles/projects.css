@@ -84,21 +84,6 @@
     transition: 1s ease-in-out;
 }
 
-/*On hover efekti za slike u dropdownu*/
-.hoverLeft:hover{
-    transform: scale(1.5) translateX(50%);
-    z-index: 3;
-}
-.hoverCenter:hover{
-    transform: scale(1.5);
-    z-index: 3;
-}
-.hoverRight:hover{
-    transform: scale(1.5) translateX(-50%);
-    z-index: 3;
-}
-/*kraj onhover efekti*/
-
 .projectWrapper .project .projectDetails .description {
     padding: 5px;
     width: 100%;
@@ -106,6 +91,45 @@
 
 .projectWrapper .project .projectDetails .description h3 {
     color: var(--accent-yellow);
+}
+
+/*modal*/
+.projectWrapper .modal {
+    width: 100%;
+    height: 100%;
+    background: var(--accent-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.projectWrapper .modal .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--accent-yellow);
+}
+
+.projectWrapper .modal .header i {
+    padding: 10px;
+    background: var(--bg-color);
+    cursor: pointer;
+}
+
+.projectWrapper .modal .header h2 {
+    margin-left: 15px;
+}
+
+.projectWrapper .modal .img {
+    height: 100%;
+}
+
+.projectWrapper .modal .img img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
 }
 
 @media only screen and (max-width:550px){
