@@ -129,6 +129,7 @@
 
 .projectWrapper .modal .img {
     height: 100%;
+    width: 100%;
 }
 
 .projectWrapper .modal .img img {
@@ -163,12 +164,16 @@
     .projectWrapper .project .projectDetails .images {
         display: flex;
         flex-direction: column;
-        pointer-events: none;
     }
 
     .projectWrapper .project .projectDetails .images img {
         width: 100%;
         margin: 5px 0px;
+    }
+
+    /*modal*/
+    .projectWrapper .modal .img {
+        overflow-x: scroll;
     }
 }
 
