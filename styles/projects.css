@@ -187,4 +187,15 @@
     .projectWrapper .project .wrapper .img {
         width: 40%;
     }
+
+    /*modal*/
+    .projectWrapper .modal .img {
+        overflow-x: scroll;
+    }
+
+    .projectWrapper .modal .img img {
+        height: inherit;
+        width: 100%;
+        object-fit: contain;
+    }
 }
