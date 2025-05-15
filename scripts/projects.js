@@ -66,7 +66,7 @@ function enableModalForImgs(project){
     });
 }
 
-function displayModal(img){
+function displayModal(img,project){
     let src = img.src;
 
     let modalImg = modal.querySelector("div.img img");
@@ -85,4 +85,6 @@ function displayModal(img){
     }
 }
 
-window.addEventListener("resize",resetProjectSizing);
+window.addEventListener("resize",()=>{
+    resetProjectSizing(projects);
+});
