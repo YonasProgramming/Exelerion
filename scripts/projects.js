@@ -6,7 +6,6 @@ projects.forEach((project)=>{
     data.style.display = "none";
     btn.onclick = function(){
         closeOtherDetails(data);
-        resetProjectSizing(projects);
         resetBtns(projects,project);
         enableModalForImgs(project);
         data.style.display = data.style.display == "none" ? "block" : "none";
@@ -30,16 +29,6 @@ function closeOtherDetails(targetToKeepOpen){
     dropdowns.forEach((dropdown)=>{
         if (dropdown != targetToKeepOpen){
             dropdown.style.display = "none";
-        }
-    });
-}
-
-function resetProjectSizing(projects){
-    projects.forEach((project)=>{
-        if (window.innerWidth <= 550){
-            project.style.height = "fit-content";
-        } else {
-            project.style.height = "250px";
         }
     });
 }
@@ -81,7 +70,3 @@ function displayModal(img,project){
         modal.style.display = "none";
     }
 }
-
-window.addEventListener("resize",()=>{
-    resetProjectSizing(projects);
-});
