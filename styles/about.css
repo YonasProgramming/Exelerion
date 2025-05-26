@@ -95,10 +95,12 @@
     .aboutWrapper .description .images .mainimg {
         width: 100%;
         margin-bottom: 15px;
+        height: fit-content;
     }
 
     .aboutWrapper .description .images .secondaryimg {
         width: 100%;
+        height: fit-content;
     }
 
     .aboutWrapper .description .images .secondaryimg img {
